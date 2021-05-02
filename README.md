@@ -24,7 +24,7 @@ The first row of images shows the original image, the non-pruned model heatmap a
 
 
 ## VGG-16 finetuned for Imagenette (pretrained on Imagenet)
-NB-Viewer: TBA
+NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/main/pretrainedGrad-CAM-pruning%20comparison.ipynb
 Includes:
 - Training Details
 - Pruning Results (local magnitude unstructured, LRU not done yet)
