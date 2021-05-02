@@ -36,3 +36,5 @@ This notebook is based on a pre-trained VGG (Imagenet) that was finetuned for Im
 ![Screenshot of French-Horn Viz](images/vgg16_pretrained_french-horn.png)
 
 What we see as well, is that there are fairly many examples that do not show any differences of heatmaps among the compression rates. However, the heatmaps seem *more 'stable'* compared to the above mentioned approach.
+
+![Screenshot of Cassette-Player Viz](images/vgg16_pretrained_cassette-player.png)
