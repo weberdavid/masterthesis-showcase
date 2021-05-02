@@ -7,7 +7,7 @@ For this notebook, a VGG-16 was randomly initialized and then trained on the Ima
 
 The first row shows the original image, the non-pruned model and then the VGG-16 pruned for every compression rate based on local-magnitude-unstructured pruning. The second row shows the original image, the non-pruned model (as in first row) and then the VGG-16 pruned for every compression rate based on local-random-unstructured pruning as a comparison. It is interesting to see differences of the GradCAM heatmap among the different model compression rates and pruning methods, as the image-row of the french horn shows below.
 
-![Alt text](images/vgg16_scratch_french-horn.png)
+![Screenshot of French-Horn Viz](images/vgg16_scratch_french-horn.png)
 
 Includes:
 - Training Details
