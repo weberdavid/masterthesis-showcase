@@ -37,4 +37,4 @@ This notebook is based on a pre-trained VGG (Imagenet) that was finetuned for Im
 
 What we see as well, is that there are fairly many examples that do not show any differences of heatmaps among the compression rates. However, the heatmaps seem *more 'stable'* compared to the above mentioned approach.
 
-![Screenshot of Cassette-Player Viz](images/vgg16_scratch_cassette-player.png)
+![Screenshot of Cassette-Player Viz](images/vgg16_pretrained_cassette-player.png)
