@@ -6,7 +6,38 @@ Grad-CAM is a popular technique for visualizing where a convolutional neural net
 
 When applying GradCAM to a VGG-16 I trained from scratch (not using the pre-trained version on Imagenet), I recognized that its heatmaps are fairly different, than applying GradCAM to a pre-trained VGG-16 (which was later finetuned on Imagenette). Therefore, the first notebook below shows GradCAM heatmaps on a trained VGG from scratch, the second notebook shows GradCAM heatmaps for a VGG that was trained on Imagenet already.
 
-#### If you ask me, I think the second notebook (the pre-trained VGG) turned out better than the one from scratch. GradCAM heatmaps are more reliable, showing better parts - however show less differences among the pruned variants.
+## Pretrained VGG-16: Heatmaps & Occlusion Maps
+NB-Viewer:
+Includes:
+- Training Details
+- Pruning Results (local magnitude unstructured, LRU not done yet)
+- Pruning Compression Rates (2, 4, 8, 16, 32, 64)
+- Different GradCAM Visualization Techniques
+
+Visualizations are divided in 4 rows with each 6 images:
+- every row shows the original image, a map for the non-pruned model, 2-compression, 4-compression, 32-compressio, 64-compression
+- the first row, shows the heatmaps of GradCAM as in other notebooks
+- the second row shows a black-transparent map, only letting through 10% of the highest pixels of the activation_map - the rest is blacked out
+- the third row, similar to the second row, just letting 20% of the highest pixels through
+- the fourth row, similar to the first row just with a heatmap reaching from black to transparent.
+
+
+## VGG-16 finetuned for Imagenette (pretrained on Imagenet)
+NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/main/pretrainedGrad-CAM-pruning%20comparison.ipynb  
+Includes:
+- Training Details
+- Pruning Results (local magnitude unstructured, LRU not done yet)
+- Pruning Compression Rates (2, 4, 8, 16, 32, 64)
+- GradCAM Visualizations
+
+This notebook is based on a pre-trained VGG (Imagenet) that was finetuned for Imagenette. Then, all convolutional layers were pruned according to local-magnitude-unstructured pruning iteratively. Every row of GradCAM heatmap-images shows one prediction made by the model - for every pruning compression rate (2 - 64). The french horn images below shows the difference to the later mentioned approach and how heatmaps evolve for different pruning rates.
+
+![Screenshot of French-Horn Viz](images/vgg16_pretrained_french-horn.png)
+
+What we see as well, is that there are fairly many examples that do not show any differences of heatmaps among the compression rates. However, the heatmaps seem *more 'stable'* compared to the later mentioned approach.
+
+![Screenshot of Cassette-Player Viz](images/vgg16_pretrained_cassette-player.png)
+
 
 ## VGG-16 trained from Scratch on Imagenette
 NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/main/Grad-CAM-pruning%20comparison.ipynb  
@@ -21,20 +52,3 @@ For this notebook, a VGG-16 was randomly initialized and then trained on the Ima
 The first row of images shows the original image, the non-pruned model heatmap and then the VGG-16 pruned heatmaps for every compression rate based on local-magnitude-unstructured pruning. The second row shows the original image, the non-pruned model heatmap (as in first row) and then the VGG-16 pruned heatmaps for every compression rate based on local-random-unstructured pruning as a comparison. It is interesting to see differences of the GradCAM heatmaps among the different model compression rates and pruning methods, as the image-row of the french horn shows below.
 
 ![Screenshot of French-Horn Viz](images/vgg16_scratch_french-horn.png)
-
-
-## VGG-16 finetuned for Imagenette (pretrained on Imagenet)
-NB-Viewer: TBA
-Includes:
-- Training Details
-- Pruning Results (local magnitude unstructured, LRU not done yet)
-- Pruning Compression Rates (2, 4, 8, 16, 32, 64)
-- GradCAM Visualizations
-
-This notebook is based on a pre-trained VGG (Imagenet) that was finetuned for Imagenette. Then, all convolutional layers were pruned according to local-magnitude-unstructured pruning iteratively. Every row of GradCAM heatmap-images shows one prediction made by the model - for every pruning compression rate (2 - 64). The french horn images below shows the difference to the above mentioned approach and how heatmaps evolve for different pruning rates.
-
-![Screenshot of French-Horn Viz](images/vgg16_pretrained_french-horn.png)
-
-What we see as well, is that there are fairly many examples that do not show any differences of heatmaps among the compression rates. However, the heatmaps seem *more 'stable'* compared to the above mentioned approach.
-
-![Screenshot of Cassette-Player Viz](images/vgg16_pretrained_cassette-player.png)
