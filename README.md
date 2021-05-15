@@ -6,7 +6,21 @@ Grad-CAM is a popular technique for visualizing where a convolutional neural net
 
 When applying GradCAM to a VGG-16 I trained from scratch (not using the pre-trained version on Imagenet), I recognized that its heatmaps are fairly different, than applying GradCAM to a pre-trained VGG-16 (which was later finetuned on Imagenette). Therefore, the first notebook below shows GradCAM heatmaps on a trained VGG from scratch, the second notebook shows GradCAM heatmaps for a VGG that was trained on Imagenet already.
 
-#### If you ask me, I think the first notebook (the pre-trained VGG) turned out better than the one from scratch. GradCAM heatmaps are more reliable, showing better parts - however show less differences among the pruned variants.
+## Pretrained VGG-16: Heatmaps & Occlusion Maps
+NB-Viewer:
+Includes:
+- Training Details
+- Pruning Results (local magnitude unstructured, LRU not done yet)
+- Pruning Compression Rates (2, 4, 8, 16, 32, 64)
+- Different GradCAM Visualization Techniques
+
+Visualizations are divided in 4 rows with each 6 images:
+- every row shows the original image, a map for the non-pruned model, 2-compression, 4-compression, 32-compressio, 64-compression
+- the first row, shows the heatmaps of GradCAM as in other notebooks
+- the second row shows a black-transparent map, only letting through 10% of the highest pixels of the activation_map - the rest is blacked out
+- the third row, similar to the second row, just letting 20% of the highest pixels through
+- the fourth row, similar to the first row just with a heatmap reaching from black to transparent.
+
 
 ## VGG-16 finetuned for Imagenette (pretrained on Imagenet)
 NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/main/pretrainedGrad-CAM-pruning%20comparison.ipynb  
