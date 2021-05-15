@@ -7,7 +7,7 @@ Grad-CAM is a popular technique for visualizing where a convolutional neural net
 When applying GradCAM to a VGG-16 I trained from scratch (not using the pre-trained version on Imagenet), I recognized that its heatmaps are fairly different, than applying GradCAM to a pre-trained VGG-16 (which was later finetuned on Imagenette). Therefore, the first notebook below shows GradCAM heatmaps on a trained VGG from scratch, the second notebook shows GradCAM heatmaps for a VGG that was trained on Imagenet already.
 
 ## Pretrained VGG-16: Heatmaps & Occlusion Maps
-NB-Viewer:
+NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/aabfa37918c289fd4c2e48a3cc19011651b56568/ExperimentBasis_01.ipynb
 Includes:
 - Training Details
 - Pruning Results (local magnitude unstructured, LRU not done yet)
@@ -20,6 +20,8 @@ Visualizations are divided in 4 rows with each 6 images:
 - the second row shows a black-transparent map, only letting through 10% of the highest pixels of the activation_map - the rest is blacked out
 - the third row, similar to the second row, just letting 20% of the highest pixels through
 - the fourth row, similar to the first row just with a heatmap reaching from black to transparent.
+
+![Screenshot of French-Horn Viz](images/vgg16_pretrained_french-horn_occlusion.png)
 
 
 ## VGG-16 finetuned for Imagenette (pretrained on Imagenet)
