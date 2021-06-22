@@ -6,6 +6,13 @@ Grad-CAM is a popular technique for visualizing where a convolutional neural net
 
 When applying GradCAM to a VGG-16 I trained from scratch (not using the pre-trained version on Imagenet), I recognized that its heatmaps are fairly different, than applying GradCAM to a pre-trained VGG-16 (which was later finetuned on Imagenette). Therefore, the first notebook below shows GradCAM heatmaps on a trained VGG from scratch, the second notebook shows GradCAM heatmaps for a VGG that was trained on Imagenet already.
 
+## Results
+NB-Viewer:
+Includes:
+- Results Experiment 1 - Class-Specific Image Parts
+- Results Experiment 1 - Grad-CAM Heat-Maps
+- Results Experiment 2 - What is on the Picture?
+
 ## Pretrained VGG-16: Heatmaps & Occlusion Maps
 NB-Viewer: https://nbviewer.jupyter.org/github/weberdavid/masterthesis-showcase/blob/aabfa37918c289fd4c2e48a3cc19011651b56568/ExperimentBasis_01.ipynb
 Includes:
